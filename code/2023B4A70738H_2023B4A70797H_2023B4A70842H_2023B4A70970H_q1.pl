@@ -22,3 +22,7 @@ clue(2, S) :-
     member(p('Alex', Dept, Lang, _), S),
     Dept \== development,
     Lang \== 'c++'.
+
+% clue(3, +S): the friend working in the testing department likes python.
+clue(3, S) :-
+    member(p(_, testing, python, _), S).
