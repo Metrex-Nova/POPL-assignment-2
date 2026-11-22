@@ -60,3 +60,12 @@ main :-
     !,
     forall(member(p(Name, Dept, Lang, Project), S),
            format("~w = [~w, ~w, ~w]~n", [Name, Dept, Lang, Project])).
+
+% count_solutions(+Active, -N): N is the number of candidates that satisfy
+% exactly the clues whose numbers are in Active (all other clues are ignored).
+count_solutions(Active, N) :-
+    findall(S,
+            ( candidate(S),
+              forall(member(C, Active), clue(C, S)) ),
+            Solutions),
+    length(Solutions, N).
