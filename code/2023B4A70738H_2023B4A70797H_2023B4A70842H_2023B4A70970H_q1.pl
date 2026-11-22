@@ -52,3 +52,11 @@ clue(7, S) :-
 clue(8, S) :-
     member(p(_, research, Lang, data), S),
     Lang \== javascript.
+
+% main: prints one solution satisfying clues 1 to 8, one friend per line.
+main :-
+    candidate(S),
+    forall(between(1, 8, N), clue(N, S)),
+    !,
+    forall(member(p(Name, Dept, Lang, Project), S),
+           format("~w = [~w, ~w, ~w]~n", [Name, Dept, Lang, Project])).
