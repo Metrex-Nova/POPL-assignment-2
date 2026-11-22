@@ -47,3 +47,8 @@ clue(7, S) :-
     member(p('Dana', Dept, Lang, _), S),
     Lang \== java,
     ( Dept == research ; Dept == testing ).
+
+% clue(8, +S): the friend who prefers data works in research and does not use javascript.
+clue(8, S) :-
+    member(p(_, research, Lang, data), S),
+    Lang \== javascript.
