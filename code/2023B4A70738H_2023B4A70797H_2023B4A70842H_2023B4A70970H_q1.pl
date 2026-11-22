@@ -41,3 +41,9 @@ clue(6, S) :-
     member(p('Carla', Dept, _, Project), S),
     Project \== embedded,
     Dept \== development.
+
+% clue(7, +S): Dana's favorite language is not java, and she works in research or testing.
+clue(7, S) :-
+    member(p('Dana', Dept, Lang, _), S),
+    Lang \== java,
+    ( Dept == research ; Dept == testing ).
