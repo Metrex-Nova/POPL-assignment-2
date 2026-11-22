@@ -35,3 +35,9 @@ clue(4, S) :-
 % clue(5, +S): the friend whose favorite language is java works in the design department.
 clue(5, S) :-
     member(p(_, design, java, _), S).
+
+% clue(6, +S): Carla's project is not embedded and her department is not development.
+clue(6, S) :-
+    member(p('Carla', Dept, _, Project), S),
+    Project \== embedded,
+    Dept \== development.
