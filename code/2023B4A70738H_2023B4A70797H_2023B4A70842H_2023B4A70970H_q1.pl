@@ -31,3 +31,7 @@ clue(3, S) :-
 clue(4, S) :-
     member(p('Ben', Dept, _, web), S),
     Dept \== testing.
+
+% clue(5, +S): the friend whose favorite language is java works in the design department.
+clue(5, S) :-
+    member(p(_, design, java, _), S).
