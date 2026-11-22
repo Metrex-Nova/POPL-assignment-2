@@ -16,3 +16,9 @@ clue(1, S) :-
     member(p(Name, Dept, _, 'AI'), S),
     Dept \== research,
     Name \== 'Dana'.
+
+% clue(2, +S): Alex does not work in development and does not prefer 'c++'.
+clue(2, S) :-
+    member(p('Alex', Dept, Lang, _), S),
+    Dept \== development,
+    Lang \== 'c++'.
