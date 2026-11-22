@@ -26,3 +26,8 @@ clue(2, S) :-
 % clue(3, +S): the friend working in the testing department likes python.
 clue(3, S) :-
     member(p(_, testing, python, _), S).
+
+% clue(4, +S): Ben prefers web and does not work in testing.
+clue(4, S) :-
+    member(p('Ben', Dept, _, web), S),
+    Dept \== testing.
